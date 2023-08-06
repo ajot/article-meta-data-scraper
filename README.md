@@ -1,6 +1,13 @@
-# Python Web Scraper for Blog Posts
+# Article Metadata Scraper
 
-This is a simple Python script that scrapes blog post titles and dates from specific URLs. The script is configured to work with URLs from Amazon Developer Blogs and Retool Blogs.
+A simple Python script to extract and organize specific data from various web sources. Given a list of URLs, the script can parse web content from these sources and save the structured data into a CSV file.
+
+## Features
+- Reads input URLs from a CSV file.
+- Supports extraction from various sources like Retool, ajot.me, Curious Mints, warp.dev, and Amazon.
+- Extracts information such as Title, Date, Source, Category, and OpenGraph Image URL.
+- Converts extracted date to a consistent YYYY-MM-DD format.
+- Saves the extracted data into an output CSV file.
 
 ## Installation
 
@@ -11,26 +18,22 @@ pip install beautifulsoup4 requests
 ```
 
 ## Usage
+To use this script, you need a CSV file with a list of URLs to scrape. The URLs should be in a column named 'URL' (or modify the script to match your column name). 
 
-To use this script, you need a CSV file with a list of URLs to scrape. The URLs should be in a column named 'URL' (or modify the script to match your column name). Each URL should point to a blog post on the Amazon Developer Blogs or Retool Blogs website.
+1. Populate input.csv with the URLs you wish to parse, ensuring the URLs are under a column named 'URL'.
 
-You can run the script with the command:
+2. Execute the script:
 
 ```bash
-python main.py
+python src/main.py
 ```
-
-The script will output the title and date of each blog post to the console.
+3. Refer to output.csv for the structured data.
 
 ## Customization
-
 The script can be customized to work with other websites or to extract different information. You would need to modify the BeautifulSoup selectors to match the HTML structure of the target website.
 
 ## Contributing
-
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
+Feel free to contribute to this repository by forking and submitting a pull request. For any major changes, please open an issue first to discuss what you would like to change.
 
 ## License
 
